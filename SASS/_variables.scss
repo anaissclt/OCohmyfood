@@ -1,0 +1,11 @@
+//couleurs 
+
+$main-color: #9356dc;
+$main-color-light: lighten (var(--main-color),5%);
+$secondary-color: #FF79DA;
+$secondary-color-ligth : lighten ($secondary-color,5%);
+$degrade-color:linear-gradient(to bottom, $main-color, $secondary-color 80%);
+$shadow-color: #00000040;
+$footer-color: #353535;
+$news-color: #008766;
+$tertiary-color: #99E2D0;
