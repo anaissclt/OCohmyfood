@@ -1,17 +1,10 @@
+/* Mixins et variables */
 /* General */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-}
-
-:root {
-  --main-color: #9356dc;
-  --secondary-color: #F2F2F2;
-  --tertiary-color: #DEEBFF;
-  --shadow-color: #00000040;
-  --footer-color: #353535;
 }
 
 html {
@@ -34,7 +27,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 2px 4px 0px var(--shadow-color);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2509803922);
 }
 .header__logo h1 {
   font-family: "Shrikhand", cursive;
@@ -44,7 +37,7 @@ img {
 
 /* Footer  */
 .footer {
-  background-color: var(--footer-color);
+  background-color: #353535;
   color: white;
   padding: 10px;
 }
