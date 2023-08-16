@@ -209,23 +209,11 @@
 
       &--heart {
          @include center;
-
-         &::before {
-            transition: all 0.8s ease-in-out;
-         }
-
-         &::after {
-            position: absolute;
-            transition: all 0.8s ease-in-out;
-         }
-
-         &:hover::before {
+         &:hover {
             transition: all 0.8s ease-in-out;
             background: $degrade-color;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            cursor: pointer;
+            background-clip: text; //fond appliqué à la zone texte
+            -webkit-text-fill-color: transparent;    // couleur de remplissage du texte 
          }
       }
    }
