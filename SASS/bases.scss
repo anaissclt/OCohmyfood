@@ -38,7 +38,7 @@ img {
    & h1 {
       font-family: "Shrikhand", cursive;
       font-weight: 500;
-      font-size: -webkit-xxx-large;
+      font-size: xx-large;
 }
 }
 
@@ -55,6 +55,8 @@ img {
 
    h1 {
       font-family: "Shrikhand", cursive;
+      font-size: larger;
+      font-weight: 100;
    }
 
    @media screen and (min-width: 768px) {
