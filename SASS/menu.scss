@@ -1,0 +1,171 @@
+/* Mixins et variables */
+@import "mixins";
+@import "variables";
+
+.main__background {
+    max-height: 30vh;
+}
+
+.header {
+    position: relative;
+
+    &__return {
+        position: absolute;
+        left: 5%;
+        padding: 5px;
+
+        i {
+            font-size: 25px;
+        }
+    }
+}
+
+.main {
+    &__menu {
+        background-color: $background-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        top: -50px;
+        width: 100%;
+        max-width: 1440px;
+        border-radius: 4rem 4rem 0 0;
+        margin: auto;
+        gap: 40px;
+
+        &--title {
+            font-size: 35px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            font-family: "Shrikhand", cursive;
+            font-weight: 300;
+            padding: 1.25rem;
+            margin-top: 3rem;
+            width: 100%;
+            justify-content: space-between;
+            border-radius: 4rem 4rem 0 0;
+            background-color: $background-color;
+
+            @media screen and (min-width: 1024px) {
+                justify-content: center;
+            }
+        }
+
+        .heart {
+            @include center;
+
+            &:hover {
+                transition: all 0.8s ease-in-out;
+                background: $degrade-color;
+                background-clip: text; //fond appliqué à la zone texte
+                -webkit-text-fill-color: transparent; // couleur de remplissage du texte 
+            }
+        }
+
+        &--entrance,
+        &--dishes,
+        &--dessert {
+            padding: 0 15px 0 35px;
+            width: 100%;
+
+            @media screen and (min-width: 768px) {
+                width: 100%;
+                max-width: 60rem;
+            }
+
+            h3 {
+                font-size: 22px;
+                text-transform: uppercase;
+                position: relative;
+                margin-bottom: 2rem;
+                padding-left: 0.5rem;
+                font-weight: 300;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -0.5rem;
+                    width: 3rem;
+                    height: 0.25rem;
+                    background-color: $tertiary-color;
+                }
+            }
+
+        }
+        &--btn {
+            @include style-btn;
+            box-shadow: 0px 4px 10px 0px $shadow-color;
+
+            margin: 0 auto;
+
+            &:hover {
+                @include hover-btn;
+            }
+        }
+    }
+}
+
+.meal {
+    display: flex;
+    box-shadow: 0px 4px 10px 0px $shadow-color;
+    border-radius: 1.25rem;
+    background-color: #ffffff;
+    margin: 15px;
+    max-width: 40rem;
+
+    &--description {
+        font-size: 22px;
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+
+        p {
+            font-weight: 200;
+        }
+    }
+
+    &--price {
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: auto;
+        flex-shrink: 0;
+        display: flex;
+        align-items: flex-end;
+        padding: 10px 25px 10px 0;
+    }
+
+    &--check {
+
+        @include center;
+        margin-right: -65px;
+        width: 65px;
+        padding: 0 0.9375rem;
+        background-color: $tertiary-color;
+        transition: margin-right .4s ease-in-out;
+
+        &::after {
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            padding: 5px;
+            border-radius: 50%;
+            color: $tertiary-color;
+            font-size: 15px;
+            background-color: #fff;
+            transition: transform 0.4s ease-in-out;
+        }
+    }
+
+    &:hover &--check,
+    &:focus &--check {
+        margin-right: 0;
+    }
+
+    &:hover &--check::after,
+    &:focus &--check::after {
+        transform: rotate(360deg);
+    }
+}
