@@ -21,9 +21,32 @@
 }
 
 
-//@include hover-btn;
+// @include hover-btn;
 
 @mixin hover-btn{
     box-shadow: 5px 5px 5px black;
     background: $degrade-color;
+}
+
+
+// @include heart;
+
+@mixin heart {
+    // content: '\f004'; 
+    // font-family: "Font Awesome 5 Free";
+    position: absolute;
+    transition: all 0.8s ease-in-out;
+}
+
+
+// @include solid-heart;
+
+@mixin solid-heart{
+    content: '\f004'; 
+    font-family: "Font Awesome 5 Free";
+    background: $degrade-color;
+    background-clip: text; //fond appliqué à la zone texte
+     -webkit-text-fill-color: transparent;    // couleur de remplissage du texte 
+    opacity: 0;
+    cursor: pointer;
 }
