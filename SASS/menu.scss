@@ -53,6 +53,27 @@
             @media screen and (min-width: 1024px) {
                 justify-content: center;
             }
+
+            &--heart {
+                @include center;
+                width: 24px;
+                height: 20px;
+       
+                &::before{
+                    @include heart;
+                }
+                &::after{
+                    @include heart;
+                    @include solid-heart;
+                    }
+                &:hover::before{
+                    color:transparent;
+                }
+                &:hover::after{
+                    font-weight: 900;
+                    opacity: 1;
+                }
+             }
         }
 
         .heart {
@@ -145,7 +166,7 @@
         width: 65px;
         padding: 0 0.9375rem;
         background-color: $tertiary-color;
-        transition: margin-right .4s ease-in-out;
+        transition: margin-right 0.4s ease-in-out;
 
         &::after {
             content: '\f00c';
@@ -168,4 +189,35 @@
     &:focus &--check::after {
         transform: rotate(360deg);
     }
+}
+
+
+.main__menu--entrance,
+.main__menu--dishes,
+.main__menu--dessert {
+  opacity: 0;
+}
+
+/* Animation pour faire apparaître avec délai */
+.main__menu--entrance {
+  animation: appear 1s both 1s;
+}
+
+.main__menu--dishes {
+  animation: appear 1s both 2s;
+}
+
+.main__menu--dessert {
+  animation: appear 1s both 3s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Décalage vers le bas */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Mixins et variables */
 .main__background {
   max-height: 30vh;
@@ -48,6 +49,36 @@
   .main__menu--title {
     justify-content: center;
   }
+}
+.main__menu--title--heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 20px;
+}
+.main__menu--title--heart::before {
+  position: absolute;
+  transition: all 0.8s ease-in-out;
+}
+.main__menu--title--heart::after {
+  position: absolute;
+  transition: all 0.8s ease-in-out;
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  background: linear-gradient(to bottom, #9356dc, #FF79DA 80%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  cursor: pointer;
+}
+.main__menu--title--heart:hover::before {
+  color: transparent;
+}
+.main__menu--title--heart:hover::after {
+  font-weight: 900;
+  opacity: 1;
 }
 .main__menu .heart {
   display: flex;
@@ -155,4 +186,34 @@
 }
 .meal:hover .meal--check::after, .meal:focus .meal--check::after {
   transform: rotate(360deg);
+}
+
+.main__menu--entrance,
+.main__menu--dishes,
+.main__menu--dessert {
+  opacity: 0;
+}
+
+/* Animation pour faire apparaître avec délai */
+.main__menu--entrance {
+  animation: appear 1s both 1s;
+}
+
+.main__menu--dishes {
+  animation: appear 1s both 2s;
+}
+
+.main__menu--dessert {
+  animation: appear 1s both 3s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Décalage vers le bas */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }/*# sourceMappingURL=menu.css.map */
