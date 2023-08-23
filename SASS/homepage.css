@@ -142,11 +142,13 @@
   color: #fff;
   left: -0.7rem;
 }
+.main__process--choice:hover div {
+  display: none;
+}
 .main__process--choice:hover, .main__process--choice:active {
   transition: all 0.4s ease-in-out;
   background-color: #f2eafb;
   background: #9356dc;
-  color: #fff;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
