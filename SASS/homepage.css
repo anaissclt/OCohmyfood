@@ -102,10 +102,23 @@
   align-items: center;
   flex-direction: column;
   padding: 3.125rem 1.25rem 2.5rem;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
 }
 .main__process h2 {
   align-self: flex-start;
   margin-bottom: 20px;
+}
+@media screen and (min-width: 1040px) {
+  .main__process {
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .main__process h2 {
+    width: 100%;
+  }
 }
 
 .main__process--choice {
@@ -153,6 +166,11 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media screen and (min-width: 1040px) {
+  .main__process--choice {
+    max-width: 30%;
+  }
+}
 
 .main__restaurant {
   padding: 3.125rem 1.25rem 2.5rem;
@@ -160,12 +178,15 @@
 }
 .main__restaurant h2 {
   margin-bottom: 10px;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
 }
 .main__restaurant .card {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0 3.125rem;
+  gap: 2rem 9rem;
   margin: 0 auto;
   width: 100%;
   max-width: 125rem;
