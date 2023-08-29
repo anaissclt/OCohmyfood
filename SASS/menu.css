@@ -24,30 +24,35 @@
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  top: -50px;
-  width: 100%;
-  max-width: 1440px;
+  max-width: 1024px;
   border-radius: 4rem 4rem 0 0;
   margin: auto;
+  margin-top: -60px;
   gap: 40px;
 }
+@media screen and (min-width: 768px) {
+  .main__menu {
+    padding: 0px 10%;
+  }
+}
 .main__menu--title {
-  font-size: 35px;
+  font-size: 30px;
   display: flex;
   text-align: center;
   align-items: center;
   font-family: "Shrikhand", cursive;
   font-weight: 300;
-  padding: 1.25rem;
+  padding: 0 1rem;
   margin-top: 3rem;
   width: 100%;
   justify-content: space-between;
   border-radius: 4rem 4rem 0 0;
   background-color: #f6f6f6;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .main__menu--title {
     justify-content: center;
+    gap: 25px;
   }
 }
 .main__menu--title--heart {
@@ -56,6 +61,7 @@
   align-items: center;
   width: 24px;
   height: 20px;
+  font-size: 2rem;
 }
 .main__menu--title--heart::before {
   position: absolute;
@@ -66,12 +72,13 @@
   transition: all 0.8s ease-in-out;
   content: "\f004";
   font-family: "Font Awesome 5 Free";
-  background: linear-gradient(to bottom, #9356dc, #FF79DA 80%);
+  background: linear-gradient(to top left, #9356dc, #FF79DA 80%);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
   cursor: pointer;
+  font-size: 2rem;
 }
 .main__menu--title--heart:hover::before {
   color: transparent;
@@ -87,13 +94,13 @@
 }
 .main__menu .heart:hover {
   transition: all 0.8s ease-in-out;
-  background: linear-gradient(to bottom, #9356dc, #FF79DA 80%);
+  background: linear-gradient(to top left, #9356dc, #FF79DA 80%);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .main__menu--entrance, .main__menu--dishes, .main__menu--dessert {
-  padding: 0 15px 0 35px;
+  padding: 0 10px;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -119,20 +126,21 @@
   background-color: #99E2D0;
 }
 .main__menu--btn {
-  padding: 20px;
-  background: linear-gradient(to bottom, #9356dc, #FF79DA 80%);
+  padding: 12px 30px;
+  background: linear-gradient(to top left, #9356dc, #FF79DA 80%);
   cursor: pointer;
   color: white;
   font-weight: 400;
   border-radius: 30px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  border: none;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 .main__menu--btn:hover {
-  box-shadow: 5px 5px 5px black;
-  background: linear-gradient(to bottom, #9356dc, #FF79DA 80%);
+  background: linear-gradient(to top left, #a872e3, #ff92e0 80%);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2509803922);
 }
 
 .meal {
@@ -142,15 +150,27 @@
   background-color: #ffffff;
   margin: 15px;
   max-width: 40rem;
+  overflow: hidden;
 }
 .meal--description {
-  font-size: 22px;
+  font-size: 20px;
   width: 100%;
-  padding: 10px;
-  margin: 10px;
+  padding: 8px;
+  margin: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .meal--description p {
-  font-weight: 200;
+  font-weight: 100;
+  font-size: smaller;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.meal--description h4 {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .meal--price {
   font-size: 20px;
@@ -159,7 +179,7 @@
   flex-shrink: 0;
   display: flex;
   align-items: flex-end;
-  padding: 10px 25px 10px 0;
+  padding: 10px 20px 10px 0;
 }
 .meal--check {
   display: flex;
@@ -181,10 +201,10 @@
   background-color: #fff;
   transition: transform 0.4s ease-in-out;
 }
-.meal:hover .meal--check, .meal:focus .meal--check {
+.meal:hover .meal--check, .meal:active .meal--check {
   margin-right: 0;
 }
-.meal:hover .meal--check::after, .meal:focus .meal--check::after {
+.meal:hover .meal--check::after, .meal:active .meal--check::after {
   transform: rotate(360deg);
 }
 
@@ -210,7 +230,8 @@
 @keyframes appear {
   0% {
     opacity: 0;
-    transform: translateY(20px); /* Décalage vers le bas */
+    transform: translateY(20px);
+    /* Décalage vers le bas */
   }
   100% {
     opacity: 1;
