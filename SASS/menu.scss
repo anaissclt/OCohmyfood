@@ -84,17 +84,6 @@
             }
         }
 
-        .heart {
-            @include center;
-
-            &:hover {
-                transition: all 0.8s ease-in-out;
-                background: $degrade-color;
-                background-clip: text; //fond appliqué à la zone texte
-                -webkit-text-fill-color: transparent; // couleur de remplissage du texte 
-            }
-        }
-
         &--entrance,
         &--dishes,
         &--dessert {
