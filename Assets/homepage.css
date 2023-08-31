@@ -159,7 +159,6 @@
 }
 .main__process--choice:hover, .main__process--choice:active {
   transition: all 0.4s ease-in-out;
-  background: #f2eafb;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: #9356dc;
@@ -247,12 +246,6 @@
   width: 10%;
   height: 100%;
   display: flex;
-}
-.main__restaurant .card__info--like a {
-  width: 4rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 }
 .main__restaurant .card__info--heart {
   display: flex;
